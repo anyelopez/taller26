@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Taller26 - Anyela López</title>
+</head>
+
+<body>
+
+        <h1>Tarjeta de credito</h1>  
+        <p>Consutar valor</p>  
+        <input id="ingresar">ingresar<br> 
+        <input id="extraer">extraer<br>   
+        <button type="button" onclick="myFunction()">ver saldo</button>  
+        <h2>Su saldo de Tarjeta de credito</h2>  <p id="ingresar">Su estado de Cuenta:</p>  
+    
+        <p id="consigno"></p>
+        <p id="retiro"></p>
+        <p id="saldo"></p>
+        <p id="cuenta"></p>
+    
+
+</body>
+
+<script> 
+    
+    var saldo = 0;
+    
+        function myFunction()
+        { 
+     
+        var titular = "Alex";
+        var ingresar = document.getElementById("ingresar").value;  
+        var extraer = document.getElementById("extraer").value; 
+
+        var caja = [];
+        caja[0]= titular;
+
+	for(var v of caja)
+	{
+		saldo = (parseFloat(saldo) + parseFloat(ingresar)) - parseFloat(extraer);
+                total = saldo;
+                document.getElementById("saldo").innerHTML = titular+"  "+ "Tu nuevo saldo es:"+"  " +saldo;
+	}
+
+        console.log ('ha depositado',ingresar)
+        console.log ('ha retirado',extraer)
+        console.log ('Saldo',saldo)
+        
+        document.getElementById("consigno").innerHTML = titular+"  "+ "Has depositado:"+"  " +ingresar;
+        document.getElementById("retiro").innerHTML = titular+"  "+ "Has retirado:"+"  " +extraer;
+        document.getElementById("cuenta").innerHTML = cuenta[0];  
+                
+} 
+
+      
+    </script>  
+</html> 
